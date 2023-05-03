@@ -51,6 +51,10 @@ public:
 	void saveCodeToFile(unordered_map<char, string> code, string filename);  
 	unordered_map<char, string> readCodeFromFile(string filename);   
 	void show();
+	//需要访问哈夫曼树的静态链表，所以需要一个get方法
+	PHFT get_start() {
+		return start;
+	}
 };
 
 
