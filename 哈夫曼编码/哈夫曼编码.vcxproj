@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Conventer.h" />
     <ClInclude Include="HuffmanTree.h" />
   </ItemGroup>
   <ItemGroup>
