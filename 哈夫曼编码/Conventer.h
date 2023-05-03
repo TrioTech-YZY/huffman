@@ -64,6 +64,34 @@ public:
 			}
 		}
 	}
+	//提供重载函数，如果不提供哈夫曼树的静态链表，则使用默认的
+	void decode() {
+		if (huffmantree == nullptr) {
+			cout << ">>>>没有默认的哈夫曼树，请提供哈夫曼树以继续译码 \n";
+			return;
+		}
+		int n = huffmantree[0].weight;//字符集的大小
+		int root = 2 * n - 1;//根结点应该在最后位置即tree[2*n-1]
+		int cur_node = root;
+
+		text.clear();
+
+		for (char c : code) {
+			if (c == '0') {
+				cur_node = huffmantree[cur_node].lchild;
+			}
+			else if (c == '1') {
+				cur_node = huffmantree[cur_node].rchild;
+			}
+			else {
+				cout << "检测到异常字符：" << c;
+			}
+			if (huffmantree[cur_node].lchild == -1 && huffmantree[cur_node].rchild == -1) {
+				text += huffmantree[cur_node].data;
+				cur_node = root;
+			}
+		}
+	}
 
 	//将字符串写入到文件
 	void flush(string fileName) {
@@ -77,6 +105,10 @@ public:
 	}
 	string getCode() {
 		return code;
+	}
+	//huffmanTree 的set方法
+	void setHuffmanTree(HuffmanTree tree) {
+		huffmantree = tree;
 	}
 };
 
