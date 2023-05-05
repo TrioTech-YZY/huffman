@@ -2,25 +2,26 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include"HuffmanTree.h"
 using namespace std;
 
-typedef struct {
-	char data;
-	int weight;//节点的权值
-	int parent, lchild, rchild; //节点的双亲，左孩子，右孩子的下标
-} HNode, * HuffmanTree;
+//typedef struct {
+//	char data;
+//	int weight;//节点的权值
+//	int parent, lchild, rchild; //节点的双亲，左孩子，右孩子的下标
+//} HFT, * PHFT;
 
 
 class Converter {
 private:
 	string code;
 	string text;
-	HuffmanTree huffmantree;
+	PHFT huffmantree;
 
 public:
 	Converter() {}
 
-	Converter(HuffmanTree tree) {
+	Converter(PHFT tree) {
 		huffmantree = tree;
 	}
 	//省略获取二进制文件对象直接自己创建；
@@ -41,7 +42,7 @@ public:
 	}
 
 	//根据code和哈夫曼树译码，返回文本字符串 text
-	void decode(HuffmanTree tree) {
+	void decode(PHFT tree) {
 		int n = tree[0].weight;//字符集的大小
 		int root = 2 * n - 1;//根结点应该在最后位置即tree[2*n-1]
 		int cur_node = root;
@@ -107,7 +108,7 @@ public:
 		return code;
 	}
 	//huffmanTree 的set方法
-	void setHuffmanTree(HuffmanTree tree) {
+	void setHuffmanTree(PHFT tree) {
 		huffmantree = tree;
 	}
 };
