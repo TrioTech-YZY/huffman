@@ -18,8 +18,8 @@ void HuffmanTree::InitHFT() {
 	for (int i = 1; i < 2 * n; i++) {
 		start[i].data = '#';
 		start[i].weight = 0;
-		start[i].LChild = 0;
-		start[i].RChild = 0;
+		start[i].lchild = 0;
+		start[i].rchild = 0;
 		start[i].parent = 0;
 	}
 	for (int i = 1; i <= n; i++) {
@@ -37,8 +37,8 @@ void HuffmanTree::InitHFT() {
 		select(start, i, min1, min2);
 		start[min1].parent = i;
 		start[min2].parent = i;
-		start[i].LChild = min1;
-		start[i].RChild = min2;
+		start[i].lchild = min1;
+		start[i].rchild = min2;
 		start[i].weight = start[min1].weight + start[min2].weight;
 	}
 }

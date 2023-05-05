@@ -23,7 +23,7 @@ using namespace std;
 typedef struct HFT{
 	char data;
 	int weight;
-	int LChild, RChild, parent;
+	int parent, lchild, rchild;
 }HFT, * PHFT;
 
 //ÀàÃû³Æ£º		  HuffmanTree

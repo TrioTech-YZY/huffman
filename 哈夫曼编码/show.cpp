@@ -11,7 +11,7 @@ void HuffmanTree::show() {
 	for (int i = 1; i <= m; i++) {
 		cout << "第" << i << "结点" << "\t字符为：" << start[i].data
 			<< "\tweight为:" << start[i].weight << "\tparent为：" <<
-			start[i].parent << "\tLChild为：" << start[i].LChild
-			<< "\tLChild为：" << start[i].RChild << endl;
+			start[i].parent << "\tLChild为：" << start[i].lchild
+			<< "\tLChild为：" << start[i].rchild << endl;
 	}
 }

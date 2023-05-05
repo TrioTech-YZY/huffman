@@ -15,7 +15,7 @@ unordered_map<char, string> HuffmanTree::CreateHFMcode() {
 		father = start[i].parent;
 		while (father != 0)
 		{
-			if (start[father].LChild == cur) st.push("0");
+			if (start[father].lchild == cur) st.push("0");
 			else st.push("1");
 			cur = father;
 			father = start[father].parent;
