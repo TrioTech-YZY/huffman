@@ -24,7 +24,7 @@ public:
 	Converter(PHFT tree) {
 		huffmantree = tree;
 	}
-	//省略获取二进制文件对象直接自己创建；
+	//省略获取二进制文件对象直接自己创建
 
 	//读取二进制文件到字符串code
 	void setCode(string fileName) {

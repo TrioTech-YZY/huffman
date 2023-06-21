@@ -131,14 +131,7 @@
     <ClInclude Include="HuffmanTree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HuffmanCode.cpp" />
-    <ClCompile Include="HuffmanTree.cpp" />
-    <ClCompile Include="InitHFTFromFile.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="readCodeFromFile.cpp" />
-    <ClCompile Include="saveCodeToFile.cpp" />
-    <ClCompile Include="InitHFT.cpp" />
-    <ClCompile Include="show.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
